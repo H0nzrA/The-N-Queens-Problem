@@ -1,32 +1,25 @@
-#include <unistd.h>
-
-void    ft_putchar(char c)
+#include "All_function.h"
+#include <stdlib.h>
+#include <stdio.h>
+int     main(int argc, char** argv)
 {
-    write(1, &c, 1);
-}
+    argc--;
+    if (argc != 1)
+        return 0;
 
-void    ft_putstr(char* str)
-{
-    while (*str != '\0')
+    int N;
+    int *board;
+
+    ft_putstr("The N queens problems\n\n");
+    ft_putstr("Value of N = ");
+    scanf("%d", &N);
+
+    board = (int)malloc(N * sizeof(int));
+
+    int i = 0;
+    while (i < N)
     {
-        ft_putchar(*str);
-        str++;
+        *(board + i) = -1;
+        i++;
     }
-}
-
-int     is_safe()
-{
-
-    return (0);
-}
-
-int     ft_ten_queen_puzzle(void)
-{
-
-}
-
-int main()
-{
-    ft_putstr("The N Queens Problem\n");
-    return 0;
 }
